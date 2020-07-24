@@ -30,20 +30,5 @@ class JobsBox extends StatelessWidget {
         }
       },
     );
-//    return FutureBuilder(
-//      future: http.get("https://api.kodilan.com/posts"),
-//      builder: (context, snapshot) {
-//        if (snapshot.connectionState == ConnectionState.done) {
-//          var jobList = jsonDecode(snapshot.data.body)['data'];
-//          print(jobList[0]['position']);
-//          return Container(
-//            child: Text("red"),
-//          );
-//        } else {
-//          return CircularProgressIndicator();
-//        }
-//      },
-//    );
   }
 }
-//https://api.kodilan.com/posts

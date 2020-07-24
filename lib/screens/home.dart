@@ -50,9 +50,6 @@ class _HomeState extends State<Home> {
                 ),
               ),
               JobsBox(),
-//              SliverList(
-//                delegate: SliverChildListDelegate(jobs),
-//              ),
             ],
           ),
         ),
@@ -60,13 +57,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-//                  Expanded(
-//                    child: ListView.builder(
-//                      itemCount: 43,
-//                      itemBuilder: (context, index) {
-//                        return ListTile(
-//                          title: Text("red"),
-//                        );
-//                      },
-//                    ),
-//                  ),

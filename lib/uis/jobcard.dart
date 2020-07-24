@@ -55,27 +55,13 @@ class JobCard extends StatelessWidget {
               disabledColor: Colors.grey,
               disabledTextColor: Colors.black,
               padding: EdgeInsets.all(8.0),
-              splashColor: Colors.blueAccent,
+              splashColor: Colors.blueGrey,
               child: Text(data['tags'][i]['name']),
               onPressed: () {
                 /* ... */
               },
             );
           }),
-//          children: <Widget>[
-//            FlatButton(
-//              child: const Text('BUY TICKETS'),
-//              onPressed: () {
-//                /* ... */
-//              },
-//            ),
-//            FlatButton(
-//              child: const Text('LISTEN'),
-//              onPressed: () {
-//                /* ... */
-//              },
-//            ),
-//          ],
         ),
       ],
     ));
