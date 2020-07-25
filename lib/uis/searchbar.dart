@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kodilan/screens/search.dart';
 
 class SearchBar extends StatefulWidget {
   @override
@@ -6,6 +7,8 @@ class SearchBar extends StatefulWidget {
 }
 
 class _SearchBarState extends State<SearchBar> {
+  TextEditingController searchController = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,6 +23,7 @@ class _SearchBarState extends State<SearchBar> {
           ],
         ),
         child: TextField(
+          controller: searchController,
           decoration: InputDecoration(
               fillColor: Colors.white,
               filled: true,
@@ -29,7 +33,13 @@ class _SearchBarState extends State<SearchBar> {
               ),
 //          border: InputBorder.none(),
               suffixIcon: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    return Search(
+                        'https://api.kodilan.com/search?query=' + searchController.text, searchController.text);
+                  }));
+                },
                 icon: Icon(Icons.search),
               ),
               hintText: 'Pozisyon adı, teknoloji adı'),
