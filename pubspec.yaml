@@ -26,7 +26,7 @@ dependencies:
 
   cupertino_icons: ^0.1.3
   http: 0.12.2
-  cached_network_image: 2.2.0
+  flutter_html: 1.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -36,6 +36,11 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: fonts/proxima_nova.ttf
+
   assets:
     - assets/empty-company-logo.png
   # The following line ensures that the Material Icons font is

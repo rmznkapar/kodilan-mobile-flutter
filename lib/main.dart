@@ -16,6 +16,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
         primaryColor: Colors.green[600],
         scaffoldBackgroundColor: Color(0XFFF3F6FC),
+//      scaffoldBackgroundColor: Colors.white,
+        fontFamily: 'Roboto',
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       initialRoute: '/',

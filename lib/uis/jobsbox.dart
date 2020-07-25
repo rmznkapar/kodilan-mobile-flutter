@@ -10,7 +10,7 @@ class JobsBox extends StatelessWidget {
   List jobList(data) {
     var jobData = jsonDecode(data)['data'];
 
-    var jobList = new List<Widget>.generate(25, (i) {
+    var jobList = new List<Widget>.generate(jsonDecode(data)['to'], (i) {
       print(jobData[i].runtimeType);
       return JobCard(data: jobData[i]);
     });
