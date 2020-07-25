@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:kodilan/uis/searchbar.dart';
 import 'package:kodilan/uis/titlebox.dart';
 import 'package:kodilan/uis/jobsbox.dart';
-import 'package:http/http.dart' as http;
-import 'package:kodilan/uis/jobcard.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -11,22 +9,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<Widget> jobs = [Container()];
-
-  _HomeState() {
-    fetchJobs().then((val) => setState(() {
-          jobs = val;
-        }));
-  }
-
-  Future fetchJobs() async {
-    var res = await http.get("https://api.kodilan.com/posts");
-    return [
-      Container(
-        child: Text("red"),
-      )
-    ];
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +31,7 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-              JobsBox(),
+              JobsBox(link: "https://api.kodilan.com/posts?get=25&period=monthly"),
             ],
           ),
         ),

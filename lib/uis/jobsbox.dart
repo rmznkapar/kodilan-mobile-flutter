@@ -4,9 +4,12 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class JobsBox extends StatelessWidget {
+  JobsBox({Key key, this.link}) : super(key: key);
+  final link;
+
   List jobList(data) {
     var jobData = jsonDecode(data)['data'];
-    print(jobData.length.toString());
+
     var jobList = new List<Widget>.generate(25, (i) {
       print(jobData[i].runtimeType);
       return JobCard(data: jobData[i]);
@@ -17,7 +20,7 @@ class JobsBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: http.get("https://api.kodilan.com/posts?get=25&period=monthly"),
+      future: http.get(link),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done)
           return SliverList(
