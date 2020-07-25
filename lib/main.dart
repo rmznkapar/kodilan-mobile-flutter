@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kodilan/screens/home.dart';
-import 'package:kodilan/screens/search.dart';
 
 void main() {
   runApp(MyApp());

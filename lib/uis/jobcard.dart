@@ -73,9 +73,7 @@ class JobCard extends StatelessWidget {
                           style: TextStyle(color: Color(0XFF757575)),
                         ),
                       ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
+                      Text("  |  "),
                       GestureDetector(
                         onTap: () => {
                           Navigator.of(context)

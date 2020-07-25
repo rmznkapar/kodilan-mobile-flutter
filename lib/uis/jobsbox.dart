@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kodilan/uis/jobcard.dart';
+import 'package:kodilan/uis/loadingjobs.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -28,7 +29,7 @@ class JobsBox extends StatelessWidget {
           );
         else {
           return SliverToBoxAdapter(
-            child: CircularProgressIndicator(),
+            child: LoadingJobs(),
           );
         }
       },
