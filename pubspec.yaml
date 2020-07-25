@@ -36,10 +36,10 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-  fonts:
-    - family: Roboto
-      fonts:
-        - asset: fonts/proxima_nova.ttf
+#  fonts:
+#    - family: Roboto
+#      fonts:
+#        - asset: assets/fonts/proxima_nova.ttf
 
   assets:
     - assets/empty-company-logo.png

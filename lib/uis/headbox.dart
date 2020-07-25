@@ -31,7 +31,6 @@ class HeadBox extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 22,
-              fontFamily: 'Roboto'
             ),
           ),
         ),
