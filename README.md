@@ -1,6 +1,10 @@
 # kodilan
+<h1>Bacic Flutter App for Beginners</h1> 
 
-A new Flutter application.
+| Home Page      | Search Page     | Job Page     |
+|------------|-------------|-------------|
+| <img src="https://raw.githubusercontent.com/rmznkapar/kodilan-mobile-flutter/master/screenshoots/search.png" alt="Show Page"/>| <img src="https://raw.githubusercontent.com/rmznkapar/kodilan-mobile-flutter/master/screenshoots/home.png" alt="Main Page"/>|<img src="https://raw.githubusercontent.com/rmznkapar/kodilan-mobile-flutter/master/screenshoots/job.png" alt="Movie Page"/>|
+
 
 ## Getting Started
 
