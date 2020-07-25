@@ -8,62 +8,76 @@ class JobCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print(data['position']);
+//    List tags =
     return Card(
-        child: Column(
-      children: <Widget>[
-        ListTile(
-          leading: FadeInImage(image: NetworkImage(data['company']['logo']), placeholder: AssetImage('assets/empty-company-logo.png')),
-              title: Text(data['position']),
-          subtitle: Wrap(
+        child: Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Row(
             children: <Widget>[
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Icon(Icons.work, color: Colors.grey),
-                  Text(data['company']['name']),
-                ],
+              ConstrainedBox(
+                constraints: BoxConstraints(
+                  minWidth: 50,
+                  maxWidth: 100,
+                ),
+                child: Container(
+                  width: 50,
+                  height: 50,
+                  child: FadeInImage(
+                      image: NetworkImage(data['company']['logo']),
+                      placeholder: AssetImage('assets/empty-company-logo.png')),
+                ),
               ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Icon(Icons.location_on, color: Colors.grey),
-                  Text(data['location']),
-                ],
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Icon(Icons.computer, color: Colors.grey),
-                  Text('Remote'),
-                ],
-              ),
+              Expanded(
+                child: Container(
+                    margin: EdgeInsets.only(left: 15.0),
+                    child: Text(
+                      data['position'],
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    )),
+              )
             ],
           ),
-          isThreeLine: true,
-        ),
-        ButtonBar(
-          children: List<Widget>.generate(data['tags'].length, (int i) {
-            if (i > 3) {
-              return Container();
-            }
-            return FlatButton(
-              color: Colors.grey,
-              textColor: Colors.white,
-              disabledColor: Colors.grey,
-              disabledTextColor: Colors.black,
-              padding: EdgeInsets.all(8.0),
-              splashColor: Colors.blueGrey,
-              child: Text(data['tags'][i]['name']),
-              onPressed: () {
-                /* ... */
-              },
-            );
-          }),
-        ),
-      ],
+          Container(
+            padding: EdgeInsets.all(10.0),
+            child: Text(
+              data['company']['name'] + " | " + data['location'],
+              style: TextStyle(color: Color(0XFF757575)),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 15.0),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //data['tags'].length > 4 ? 4 : data['tags'].length
+                  children: List<Widget>.generate(data['tags'].length, (int i) {
+                    return Container(
+                        padding: EdgeInsets.all(10.0),
+                        margin: EdgeInsets.symmetric(horizontal: 10.0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5.0),
+                          color: Color(0XFFF4F7FF),
+                        ),
+                        child: Text(data['tags'][i]['name'],
+                            style: TextStyle(
+                                color: Color(0XFF8A90A5),
+                                fontWeight: FontWeight.w600)));
+                  })
+//            [
+//              Container(child: Text(data['tags'][0]['name'])),
+//              Container(child: Text(data['tags'][1]['name'] ?? 'red')),
+//              Container(child: Text(data['tags'][2]['name'] ?? 'red'))
+//            ],
+                  ),
+            ),
+          ),
+        ],
+      ),
     ));
   }
 }
